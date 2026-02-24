@@ -142,7 +142,7 @@ svg{width:100%;height:100%;display:block;overflow:visible}
 /* Bank */
 .bank-lbl{font-family:'Cinzel',serif;font-size:10px;letter-spacing:.20em;color:var(--text-dim);text-align:center;text-transform:uppercase}
 .bank{
-  display:grid;grid-template-columns:repeat(7,1fr);gap:10px;
+  display:grid;grid-template-columns:repeat(5,1fr);gap:10px;
   padding:14px;background:#fff;border-radius:16px;
   border:1px solid var(--border);box-shadow:0 2px 12px rgba(20,80,160,.08);
   touch-action:pan-y;
@@ -156,7 +156,7 @@ svg{width:100%;height:100%;display:block;overflow:visible}
   touch-action:none;
   min-height:56px;
 }
-.p-btn span{font-family:'Cinzel',serif;font-size:7px;letter-spacing:.04em;color:var(--text-dim);text-transform:uppercase;font-weight:600}
+.p-btn span{font-family:'Cinzel',serif;font-size:9.5px;letter-spacing:.03em;color:var(--text-dim);text-transform:uppercase;font-weight:700}
 .p-btn:hover   {transform:scale(1.09);box-shadow:0 4px 14px rgba(20,80,160,.20)}
 .p-btn.dragging{opacity:.32;transform:scale(.93)}
 .p-btn.placed  {opacity:.18;filter:grayscale(1);pointer-events:none}
@@ -186,6 +186,8 @@ svg{width:100%;height:100%;display:block;overflow:visible}
 .c-mars   {fill:var(--mars);   color:var(--mars)}
 .c-jupiter{fill:var(--jupiter);color:var(--jupiter)}
 .c-saturn {fill:var(--saturn); color:var(--saturn)}
+.c-rahu   {fill:#4a235a;       color:#4a235a}
+.c-ketu   {fill:#7b3f00;       color:#7b3f00}
 </style>
 </head>
 <body>
@@ -240,6 +242,8 @@ svg{width:100%;height:100%;display:block;overflow:visible}
     <button class="p-btn c-mars"    data-id="mars">♂<span>Mars</span></button>
     <button class="p-btn c-jupiter" data-id="jupiter">♃<span>Jupiter</span></button>
     <button class="p-btn c-saturn"  data-id="saturn">♄<span>Saturn</span></button>
+    <button class="p-btn c-rahu"    data-id="rahu">☊<span>Rahu</span></button>
+    <button class="p-btn c-ketu"    data-id="ketu">☋<span>Ketu</span></button>
   </div>
 
   <button class="clear-btn" id="clear-btn">✕ Clear Chart</button>
@@ -344,9 +348,9 @@ function svgTxt(str, r, rad, cls, parent) {
 const Z_SYM  = ['♈','♉','♊','♋','♌','♍','♎','♏','♐','♑','♒','♓'];
 const Z_NAME = ['Aries','Taurus','Gemini','Cancer','Leo','Virgo',
                 'Libra','Scorpio','Sagittarius','Capricorn','Aquarius','Pisces'];
-const P_SYM  = { sun:'☉', moon:'☽', mercury:'☿', venus:'♀', mars:'♂', jupiter:'♃', saturn:'♄' };
+const P_SYM  = { sun:'☉', moon:'☽', mercury:'☿', venus:'♀', mars:'♂', jupiter:'♃', saturn:'♄', rahu:'☊', ketu:'☋' };
 const P_NAME = { sun:'Sun', moon:'Moon', mercury:'Mercury', venus:'Venus',
-                 mars:'Mars', jupiter:'Jupiter', saturn:'Saturn' };
+                 mars:'Mars', jupiter:'Jupiter', saturn:'Saturn', rahu:'Rahu', ketu:'Ketu' };
 
 function zSign(z) { return Math.floor(mod360(z) / 30); }
 function zDeg(z)  { return mod360(z) % 30; }
